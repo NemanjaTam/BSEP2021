@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9667a43d-7024-4f00-b4d4-03008bba2eae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_56.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/data/IssuerData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/data/SubjectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_56.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/keystores/KeyStoreReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/keystores/KeyStoreWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/pom.xml" afterDir="false" />
     </list>
@@ -23,6 +23,7 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -38,6 +39,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1pwMinhYQg5f8GbsZcNMwIpk7Ju" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/data" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/BSEP/SecureXML-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -61,16 +65,14 @@
       <recent name="C:\Users\Vuk\Desktop\New folder\BSEP2021\BSEP_PROJECT\src\main\java\data" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JavaScript Debug.certificateCreate.html">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,6 +98,7 @@
       <updated>1616089829141</updated>
       <workItem from="1616089830462" duration="1489000" />
       <workItem from="1616091386593" duration="1969000" />
+      <workItem from="1616167477554" duration="4263000" />
     </task>
     <servers />
   </component>
