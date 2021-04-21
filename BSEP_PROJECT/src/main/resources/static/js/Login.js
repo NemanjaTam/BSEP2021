@@ -1,9 +1,10 @@
 $(function(){
-    var textfield = $("input[name=user]");
+    let textfield = $("input[name=user]");
+    let texfield2 = $("input[name = password]")
     $('button[type="submit"]').click(function(e) {
         e.preventDefault();
         //little validation just to check username
-        if (textfield.val() != "") {
+        if (textfield.val() != "" && texfield2.val() != "") {
             //$("body").scrollTo("#output");
             $("#output").addClass("alert alert-success animated fadeInUp").html("Welcome back " + "<span style='text-transform:uppercase'>" + textfield.val() + "</span>");
             $("#output").removeClass(' alert-danger');
@@ -31,7 +32,7 @@ $(function(){
         } else {
             //remove success mesage replaced with error message
             $("#output").removeClass(' alert alert-success');
-            $("#output").addClass("alert alert-danger animated fadeInUp").html("sorry enter a username ");
+            $("#output").addClass("alert alert-danger animated fadeInUp").html("enter username and password");
         }
         //console.log(textfield.val());
 

@@ -134,3 +134,6 @@ html,body{
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
 }
+.margin{
+    margin-bottom: 20px;
+}
