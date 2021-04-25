@@ -73,7 +73,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //TODO
                 .antMatchers("/security/admin/**").hasRole("SYSTEM_ADMIN")
 
-                .antMatchers("/user/**").permitAll()
+                .antMatchers("/registration").permitAll()
+                .antMatchers("/login").permitAll()
                 //	antMatchers("/certificate/download/**").permitAll()
                 // svaki zahtev mora biti autorizovan
                 .anyRequest().authenticated().and()
@@ -89,7 +90,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         // TokenAuthenticationFilter ce ignorisati sve ispod navedene putanje
         //TODO
-        web.ignoring().antMatchers(HttpMethod.POST, "/auth/login");
+        web.ignoring().antMatchers(HttpMethod.POST, "/login");
         web.ignoring().antMatchers(HttpMethod.GET, "/", "/checkIsAdmin", "/webjars/**", "/*.html", "/favicon.ico", "/**/*.html","/**/*.png", "/**/*.css", "/**/*.js");
 
     }

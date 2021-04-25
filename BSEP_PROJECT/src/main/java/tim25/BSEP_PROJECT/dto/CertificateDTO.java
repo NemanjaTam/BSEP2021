@@ -1,10 +1,10 @@
 package tim25.BSEP_PROJECT.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
+
+
 import java.util.Date;
 
-@Data
 public class CertificateDTO {
 
     private String commonName;

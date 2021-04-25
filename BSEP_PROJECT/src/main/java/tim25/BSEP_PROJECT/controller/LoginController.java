@@ -64,7 +64,7 @@ public class LoginController {
 
 
     @PostMapping(value = "/registration", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Boolean> loginUser(@RequestBody RegistrationDTO registrationDTO,
+    public ResponseEntity<Boolean> registerUser(@RequestBody RegistrationDTO registrationDTO,
                                           HttpServletResponse response) throws AuthenticationException, IOException {
 
         Boolean success = service.registerUser(registrationDTO);
