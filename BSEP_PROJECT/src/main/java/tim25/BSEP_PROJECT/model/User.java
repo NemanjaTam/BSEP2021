@@ -73,6 +73,7 @@ public class User implements UserDetails {
         return permissions;
     }
 
+
     // ------GET
     public Long getId() {
         return id;

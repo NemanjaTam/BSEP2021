@@ -5,7 +5,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import tim25.BSEP_PROJECT.dto.RegistrationDTO;
+
 import tim25.BSEP_PROJECT.model.User;
 import tim25.BSEP_PROJECT.repository.UserRepository;
 
@@ -35,6 +37,7 @@ public class LoginService implements UserDetailsService {
             return user;
     }
 
+
     public Boolean registerUser(RegistrationDTO registrationDTO)  {
         User user = userRepo.save(new User(registrationDTO));
         if(user != null) {
@@ -42,6 +45,7 @@ public class LoginService implements UserDetailsService {
         } return false;
 
     }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) {

@@ -1,6 +1,8 @@
 package tim25.BSEP_PROJECT.controller;
 
+
 import tim25.BSEP_PROJECT.dto.RegistrationDTO;
+
 import tim25.BSEP_PROJECT.model.User;
 import tim25.BSEP_PROJECT.model.UserTokenState;
 import tim25.BSEP_PROJECT.service.LoginService;
@@ -19,7 +21,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import tim25.BSEP_PROJECT.service.UserService;
+
+
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -57,6 +62,7 @@ public class LoginController {
 
     }
 
+
     @PostMapping(value = "/registration", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Boolean> loginUser(@RequestBody RegistrationDTO registrationDTO,
                                           HttpServletResponse response) throws AuthenticationException, IOException {
@@ -71,4 +77,5 @@ public class LoginController {
         }
 
     }
+
 }
