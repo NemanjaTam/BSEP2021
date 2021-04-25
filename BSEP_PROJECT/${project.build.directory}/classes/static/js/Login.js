@@ -18,7 +18,16 @@ $(function(){
                 method: "POST",
                 contentType: "application/json",    	 //tip prosledjenog objekta
                 data: loginJSON,						// sta je prosledjeni objekat
-                datatype: "text"
+                datatype: "text",
+                error: function(data){
+                    console.log(data);
+                    alert("Neispravno korisnicko ime i/ili sifra!");
+                },
+                success: function(data) {
+                    console.log(data);
+                    alert("Uspesno logovanje!");
+                    window.location.href = "http://localhost:8002/Aplikacija/Home.html";
+                }
             });
             $("#output").addClass("alert alert-success animated fadeInUp").html("Welcome back " + "<span style='text-transform:uppercase'>" + textfield.val() + "</span>");
             $("#output").removeClass(' alert-danger');

@@ -1,5 +1,6 @@
 package tim25.BSEP_PROJECT.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,30 +21,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
-
+import tim25.BSEP_PROJECT.dto.RegistrationDTO;
 
 
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {
-    private static final long serialVersionUID = 6882427434891133050L;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "user_authority", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
-    private List<Authority> authorities;
-
-    public void setAuthorities(List<Authority> authorities) {
-        this.authorities = authorities;
-    }
-
-    public List<Authority>getAllAuthorities(){
-        return authorities;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.authorities;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false)
     private String username;
@@ -51,29 +38,57 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String email;
 
-    @JsonProperty(access = Access.WRITE_ONLY)
     @Column(nullable = false)
     private String password;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    public Long getId() {
-        return id;
-    }
 
     @Column(nullable = false)
     private Boolean activated;
 
-    // ------SET
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "user_authority", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
+    private List<Authority> authorities;
 
-    public void setEmail(String email) {
-        this.email = email;
+    public User() { }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(RegistrationDTO registrationDTO) {
+        this.username = registrationDTO.getUsername();
+        this.password = registrationDTO.getPassword();
+        this.email  = registrationDTO.getEmail();
+        this.activated = false;
+        this.authorities = new ArrayList<Authority>();
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> permissions = new ArrayList<GrantedAuthority>(20);
+        for (Authority authority : this.authorities) {
+            permissions.addAll(authority.getPrivileges());
+        }
+        permissions.addAll(this.authorities);
+        return permissions;
+    }
+
+    // ------GET
+    public Long getId() {
+        return id;
+    }
+
+    // ------SET
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setPassword(String password) {
@@ -81,7 +96,6 @@ public class User implements UserDetails {
     }
 
     // -----UserDetails metode
-
     @Override
     public String getPassword() {
         return password;

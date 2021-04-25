@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9667a43d-7024-4f00-b4d4-03008bba2eae" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/ForgotPassword.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/Registration.html" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/model/Privilege.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/service/AuthorityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/validation/RegularExpressions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/data.sql" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/53ccc3ed-0e26-4bec-b68c-dcc98b22a5f0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/53ccc3ed-0e26-4bec-b68c-dcc98b22a5f0/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/53ccc3ed-0e26-4bec-b68c-dcc98b22a5f0/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
@@ -22,9 +33,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c2de35df-b604-41d1-8591-f1afd7695a59/storage_v2/_src_/database/DB.fggAAA/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c2de35df-b604-41d1-8591-f1afd7695a59/storage_v2/_src_/database/DB.fggAAA/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/css/Login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/js/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/resources/static/js/Login.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/model/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/model/UserTokenState.java" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/model/UserTokenState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/repository/AuthorityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/repository/AuthorityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/security/TokenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/BSEP_PROJECT/src/main/java/tim25/BSEP_PROJECT/security/TokenUtils.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,17 +117,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="certificateCreate.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BSEP_PROJECT/static/certificateCreate.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -135,7 +144,14 @@
       <workItem from="1616089830462" duration="1489000" />
       <workItem from="1616091386593" duration="1969000" />
       <workItem from="1616167477554" duration="25597000" />
+<<<<<<< Updated upstream
       <workItem from="1619006553859" duration="6574000" />
+=======
+      <workItem from="1617373825965" duration="1249000" />
+      <workItem from="1618772169081" duration="291000" />
+      <workItem from="1619110673471" duration="21540000" />
+      <workItem from="1619250479145" duration="123000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

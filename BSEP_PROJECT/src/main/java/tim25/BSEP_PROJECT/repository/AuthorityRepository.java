@@ -9,3 +9,4 @@ import tim25.BSEP_PROJECT.model.Authority;
 public interface AuthorityRepository extends JpaRepository<Authority, Long>{
     public Authority findOneByName(String name);
 }
+

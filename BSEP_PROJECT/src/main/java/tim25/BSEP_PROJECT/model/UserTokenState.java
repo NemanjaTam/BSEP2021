@@ -3,16 +3,19 @@ package tim25.BSEP_PROJECT.model;
 public class UserTokenState {
 
     private String accessToken;
-    private Long expiresIn;
+    private long expiresIn;
+    private String role;
 
     public UserTokenState() {
-        this.accessToken = null;
-        this.expiresIn = null;
+        super();
+        // TODO Auto-generated constructor stub
     }
 
-    public UserTokenState(String accessToken, long expiresIn) {
+    public UserTokenState(String accessToken, long expiresIn, String role) {
+        super();
         this.accessToken = accessToken;
         this.expiresIn = expiresIn;
+        this.role = role;
     }
 
     public String getAccessToken() {
@@ -23,11 +26,19 @@ public class UserTokenState {
         this.accessToken = accessToken;
     }
 
-    public Long getExpiresIn() {
+    public long getExpiresIn() {
         return expiresIn;
     }
 
-    public void setExpiresIn(Long expiresIn) {
+    public void setExpiresIn(long expiresIn) {
         this.expiresIn = expiresIn;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
