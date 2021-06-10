@@ -1,0 +1,47 @@
+<div class="wallpaper">
+    <div class="logo">
+        <a>
+          <h2 style="color:white; font-style: italic;">Welcome to Security System!</h2>
+        </a>
+    </div>
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="username" placeholder="Email" />
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('username')?.dirty && validateForm.get('username')?.errors">Please enter your email address!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Password" />
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.errors">Please enter your password!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="default" nzGhost class="login-form-button" [disabled]="!validateForm.valid">Login</button>
+        </nz-form-control>
+      </nz-form-item>
+        <div style="float: right; margin-right: 16%; margin-top: 10%;">
+            <b><a 
+                (click)="createRequest()" 
+                style="color: white; font-style: oblique; margin-bottom: 5%;">Create Certificate Request!</a></b>
+            <br>
+            <br>
+            <a style="color: white;">or </a>
+            <b><a 
+                (click)="createAccount()" 
+                style="color: white; font-style: oblique;">Create Account!</a></b>
+            <br>
+            <br>
+            <a style="color: white;">or maybe you </a>
+            <b><a 
+                (click)="forgotPassword()" 
+                style="color: white; font-style: oblique;">Forgot your password?</a></b>
+        </div>
+    </form>
+</div>
