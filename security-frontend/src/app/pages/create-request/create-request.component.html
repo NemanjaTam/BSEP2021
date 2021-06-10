@@ -1,0 +1,126 @@
+<div class="pictureWrapper">
+  <div class="logo">
+    <a>
+      <h1 style="color: white; font-style: oblique;">Register certificate: </h1>
+    </a>
+  </div>
+  <div class="profileWrapper">
+    <form nz-form [formGroup]="validateForm">
+      <nz-form-item>
+        <!-- <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="firstName" nzRequired>
+          
+        </nz-form-label> -->
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+          <input nz-input id="firstName" formControlName="firstName" placeholder="First name" />
+          <nz-form-explain *ngIf="validateForm.get('firstName')?.dirty && validateForm.get('firstName')?.errors"
+            >Please enter first name!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+  
+      <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+          <input nz-input id="lastName" formControlName="lastName" placeholder="Last name" />
+          <nz-form-explain *ngIf="validateForm.get('lastName')?.dirty && validateForm.get('lastName')?.errors"
+            >Please enter your last name!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+      
+      <nz-form-item>
+        
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+          <input nz-input id="email" formControlName="email" placeholder="Email" />
+          <nz-form-explain *ngIf="validateForm.get('email')?.dirty && validateForm.get('email')?.errors"
+            >Please enter email address!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+          <input nz-input id="country" formControlName="country" placeholder="Country" />
+          <nz-form-explain *ngIf="validateForm.get('country')?.dirty && validateForm.get('country')?.errors"
+            >Please enter country!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+          <input nz-input id="organisation" formControlName="organisation" placeholder="Organisation" />
+          <nz-form-explain *ngIf="validateForm.get('organisation')?.dirty && validateForm.get('organisation')?.errors"
+            >Please enter organisation name!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+          <input nz-input id="organisationUnit" formControlName="organisationUnit" placeholder="Organisation unit" />
+          <nz-form-explain *ngIf="validateForm.get('organisationUnit')?.dirty && validateForm.get('organisationUnit')?.errors"
+            >Please enter organisation unit!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <!-- <nz-form-item nz-row style="margin-bottom:8px;">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button (click)="create()" nz-button nzType="primary" [disabled]="!validateForm.valid" nzGhost>Create</button>
+        </nz-form-control>
+      </nz-form-item> -->
+    </form>
+
+    <!-- <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="exstension" nzRequired>
+      <span>Extension</span>
+    </nz-form-label> -->
+    <nz-select
+      style="width: 260px; margin-left: 18%;"
+      nzShowSearchselectedType
+      nzAllowClear
+      nzPlaceHolder="Choose extension"
+      [(ngModel)]="extension">  
+    
+      <nz-option nzLabel=".cer" nzValue=".cer"></nz-option>
+      <nz-option nzLabel=".pem" nzValue=".pem"></nz-option>
+    </nz-select>
+    
+    <br/>
+    <br/>
+
+    <!-- <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="certificationType" nzRequired>
+      <span>Type</span>
+    </nz-form-label> -->
+    <nz-select
+      style="width: 260px; margin-left: 18%; margin-bottom: 10%;"
+      nzShowSearchselectedType
+      nzAllowClear
+      nzPlaceHolder="Choose certificate type"
+      [(ngModel)]="certificateType"
+      (ngModelChange)="setupVisibility()">  
+
+      <nz-option nzLabel="Root CA" nzValue="rootCA"></nz-option>
+      <nz-option nzLabel="Certification authority" nzValue="certificationAuthority"></nz-option>
+      <nz-option nzLabel="End user" nzValue="endUser"></nz-option>
+    </nz-select>
+    
+    <hr>
+
+    <button 
+        style="margin-left: 40%;"
+        (click)="create()" 
+        nz-button nzType="primary" 
+        [disabled]="!validateForm.valid">Create</button>
+    <br/>
+    <div style="float: right;">
+    <a style="color: white;">or if admin </a>
+    <b><a 
+        (click)="login()" 
+        style="color: white; font-style: oblique;">Log in!</a></b>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<nz-table #nzTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th nzCustomFilter>
+          Name
+      </th>
+      <th>
+          Email
+      </th>
+      <th>
+          Expire date
+      </th>
+      <th>
+         Organisation
+      </th>
+      <th>
+          Certificate type
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of nzTable.data">
+      <td>{{ nameAndSurname(data.firstName, data.lastName) }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ formatDate(data.expireDate) }}</td>
+      <td>{{ data.organisation }}</td>
+      <td>{{ data.caOrEnd }}</td>
+      <td>
+        <button (click)="approve(data)" nz-button nzType="primary">Approve</button>
+      </td>
+      <td>
+        <button (click)="deny(data.id)" nz-button nzType="danger">Deny</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

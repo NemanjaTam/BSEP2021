@@ -1,0 +1,43 @@
+<!-- <div id="main_id">
+Check certificate status:
+<nz-input-group
+  style="width: 200px;"
+[nzSuffix]="inputClearTpl">
+  <input type="text"
+  nz-input [(ngModel)]="inputValue"
+  placeholder="Input serial number"/>
+</nz-input-group>
+<ng-template #inputClearTpl
+  ><i nz-icon class="ant-input-clear-icon" nzTheme="fill" nzType="close-circle" *ngIf="inputValue" (click)="inputValue = null"></i
+></ng-template>
+<button
+  nz-button
+  nzType="primary"
+  (click)="onCheckClick()">Check</button>
+</div>
+
+<hr> -->
+
+<nz-table #nzTable [nzData]="listOfData">
+    <thead>
+      <tr>
+        <th nzCustomFilter>
+            Serial number
+        </th>
+        <th>
+            Owner email
+        </th>
+        <th>
+            Issuer email
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of nzTable.data">
+        <td>{{ data.serialNum }}</td>
+        <td>{{ data.subject }}</td>
+        <td>{{ data.issuer }}</td>
+      </tr>
+    </tbody>
+  </nz-table>

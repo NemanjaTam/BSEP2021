@@ -1,0 +1,41 @@
+<div class="pictureWrapper">
+    <div class="logo">
+      <a>
+        <h1 style="color: white; font-style: oblique;">Approving request</h1>
+      </a>
+    </div>
+    <div class="profileWrapper">
+        <nz-form-item>
+            <nz-select
+                style="width: 260px;"
+                nzShowSearchselectedType
+                nzAllowClear
+                nzPlaceHolder="Choose issuer"
+                [(ngModel)]="selectedIssuer"
+                (ngModelChange)="issuerSelected($event)" 
+                >
+            
+                <nz-option *ngFor="let issuer of issuers" [nzValue]="issuer.email" [nzLabel]="fullName(issuer.firstName, issuer.lastName)"></nz-option>
+            </nz-select>
+        </nz-form-item>
+
+        <form nz-form [formGroup]="validateForm"> 
+        <nz-form-item>
+            <nz-date-picker
+                nzFormat="yyyy/MM/dd"
+                [nzDisabledDate]="disabledDate"
+                formControlName="endDate"
+            >
+            </nz-date-picker>
+            <nz-form-explain *ngIf="validateForm.get('endDate')?.dirty && validateForm.get('endDate')?.errors"
+                >Please enter a valid expiration date!</nz-form-explain
+            >
+        </nz-form-item>
+    </form>
+      <br/>
+      <br/>
+  
+      <button (click)="finish()" nz-button nzType="primary" [disabled]="!validateForm.valid">Finish</button>
+      <br/>
+    </div>
+  </div>

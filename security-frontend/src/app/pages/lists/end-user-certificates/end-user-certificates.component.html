@@ -1,0 +1,35 @@
+<nz-table #nzTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th nzCustomFilter>
+          Name
+      </th>
+      <th>
+          Email
+      </th>
+      <th>
+          Expire date
+      </th>
+      <th>
+         Issuer email
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of nzTable.data">
+      <td>{{ nameAndSurname(data.firstName, data.lastName) }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ formatDate(data.expireDate) }}</td>
+      <td>{{ data.caemail }}</td>
+      <td>
+        <button (click)="revoke(data.email)" 
+            style="margin-right: 10px;"
+            nz-button nzType="danger" nzGhost>Revoke</button>
+        <button (click)="download(data.email)" 
+            nz-button nzType="primary" nzGhost>Download</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
