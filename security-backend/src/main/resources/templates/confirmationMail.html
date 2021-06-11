@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p>Dear <b th:text="${name}"></b>,</p>
+
+    <p>We need your confirmation of account in our system. Please confirm it on this link <a th:href="${link}">confirmation link</a></p>
+
+    <p>Yours sincerely,</p>
+    <p>Busep Team</p>
+</body>
+</html>
