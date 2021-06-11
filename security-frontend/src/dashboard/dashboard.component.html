@@ -1,0 +1,37 @@
+<nz-layout class="layout">
+  <nz-sider [nzWidth]="200" >
+    <div class="logo">Security System Board</div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" style="height:100%">
+        <li routerLink="certificate-requests" nz-menu-item style="font-style:oblique;">
+            <i nz-icon nzType="contacts" nzTheme="outline"></i>
+            <span>Certificate requests</span>
+        </li>
+        <li routerLink="ca-certificates" nz-menu-item style="font-style:oblique;">
+            <i nz-icon nzType="copyright" nzTheme="outline"></i>
+            <span>CA certificates</span>
+        </li>
+        <li routerLink="end-user-certificates" nz-menu-item style="font-style:oblique;">
+            <i nz-icon nzType="user" nzTheme="outline"></i>
+            <span>End user certificates</span>
+        </li>
+        <li routerLink="revoked-certificates" nz-menu-item style="font-style:oblique;">
+            <i nz-icon nzType="warning" nzTheme="outline"></i>
+            <span> Revoked certificates</span>
+        </li>
+        <li routerLink="registration-request" nz-menu-item style="font-style:oblique;">
+          <i nz-icon nzType="usergroup-add" nzTheme="outline"></i>
+          <span> Registration Requests</span>
+        </li>
+        <hr>
+        <li nz-menu-item nzMatchRouter>
+            <a (click)="clearStorage()" style="font-style:oblique;">Log out</a>
+        </li>
+    </ul>
+  </nz-sider>
+
+  <nz-content style="min-height: 100%;">
+    <div class="inner-content">
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+  </nz-layout>
