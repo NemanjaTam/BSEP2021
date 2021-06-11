@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOGS" value="./logs" />
+
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="TraceAndDebugRollingFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/trace-debug-logger.log</file>
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d | %p | %C{1.} | [%t] | %m%n</Pattern>
+        </encoder>
+
+        <filter class="com.project.securitybackend.config.logs.TraceDebugLogsConfig">
+        </filter>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>zippedLogs/traceDebugLogger-%d{yyyy-MM-dd}.%i.log.zip
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="InfoRollingFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/info-logger.log</file>
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d | %p | %C{1.} | [%t] | %m%n</Pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>zippedLogs/infoLogger-%d{yyyy-MM-dd}.%i.log.zip
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="WarningRollingFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/warning-logger.log</file>
+        <filter class="com.project.securitybackend.config.logs.WarningLogsConfig">
+        </filter>
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d | %p | %C{1.} | [%t] | %m%n</Pattern>
+        </encoder>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>zippedLogs/warningLogger-%d{yyyy-MM-dd}.%i.log.zip
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="ErrorMailing" class="ch.qos.logback.classic.net.SMTPAppender">
+        <smtpHost>smtp.gmail.com</smtpHost>
+        <smtpPort>587</smtpPort>
+        <STARTTLS>true</STARTTLS>
+        <to>stanarevic.mihailo10@gmail.com</to>
+        <from>busep.rentacar@gmail.com</from>
+        <username>busep.rentacar@gmail.com</username>
+        <password>buseprentacar2020!</password>
+        <subject>Your app encountered an error</subject>
+        <asynchronousSending>true</asynchronousSending>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{HH:mm:ss} %logger{35} - %msg%n - check your logs for additional information. This is an auto-generated message.</pattern>
+        </layout>
+        <filter class="com.project.securitybackend.config.logs.ErrorMailLogsConfig">
+        </filter>
+    </appender>
+
+    <appender name="ErrorRollingFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/error-logger.log</file>
+        <filter class="com.project.securitybackend.config.logs.ErrorMailLogsConfig">
+        </filter>
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d | %p | %C{1.} | [%t] | %m%n</Pattern>
+        </encoder>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>zippedLogs/errorLogger-%d{yyyy-MM-dd}.%i.log.zip
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="Console" />
+    </root>
+
+    <logger name="com.project" level="trace" additivity="false">
+        <appender-ref ref="InfoRollingFile" />
+        <appender-ref ref="WarningRollingFile" />
+        <appender-ref ref="ErrorRollingFile" />
+        <appender-ref ref="ErrorMailing" />
+        <appender-ref ref="TraceAndDebugRollingFile" />
+    </logger>
+
+</configuration>
