@@ -1,4 +1,4 @@
-package com.project.securitybackend.config;
+package com.bsep.application.config;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
@@ -46,9 +46,9 @@ public class ServerConfig {
     private Connector getHttpConnector() {
         Connector connector = new Connector(TomcatServletWebServerFactory.DEFAULT_PROTOCOL);
         connector.setScheme("http");
-        connector.setPort(8080);
+        connector.setPort(8081);
         connector.setSecure(false);
-        connector.setRedirectPort(9000);
+        connector.setRedirectPort(9001);
         return connector;
     }
 

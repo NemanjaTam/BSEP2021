@@ -70,7 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .authorizeRequests()
                 .antMatchers("/certificate-requests", "/certificate-requests/**", "/auth/login",
-                        "/ocsp/**", "/auth/registration", "/users/**", "/auth/forgot-password", "/auth/password-recovery").permitAll()
+                        "/ocsp/**", "/auth/registration", "/users/**", "/auth/forgot-password", "/auth/password-recovery", "/api/**").permitAll()
                 .anyRequest().authenticated().and()
 
                 .cors().and()
