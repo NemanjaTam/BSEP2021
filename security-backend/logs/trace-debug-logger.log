@@ -1,0 +1,8 @@
+2021-06-12 13:20:09,882 | DEBUG | org.springframework.boot.StartupInfoLogger | [main] | Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2021-06-12 13:20:10,961 | DEBUG | org.springframework.boot.web.servlet.server.DocumentRoot | [main] | Code archive: C:\Users\a.beker\.m2\repository\org\springframework\boot\spring-boot\2.2.6.RELEASE\spring-boot-2.2.6.RELEASE.jar
+2021-06-12 13:20:10,962 | DEBUG | org.springframework.boot.web.servlet.server.DocumentRoot | [main] | Code archive: C:\Users\a.beker\.m2\repository\org\springframework\boot\spring-boot\2.2.6.RELEASE\spring-boot-2.2.6.RELEASE.jar
+2021-06-12 13:20:10,962 | DEBUG | org.springframework.boot.web.servlet.server.DocumentRoot | [main] | None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2021-06-12 13:39:35,695 | DEBUG | org.springframework.boot.StartupInfoLogger | [main] | Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2021-06-12 13:39:36,742 | DEBUG | org.springframework.boot.web.servlet.server.DocumentRoot | [main] | Code archive: C:\Users\a.beker\.m2\repository\org\springframework\boot\spring-boot\2.2.6.RELEASE\spring-boot-2.2.6.RELEASE.jar
+2021-06-12 13:39:36,742 | DEBUG | org.springframework.boot.web.servlet.server.DocumentRoot | [main] | Code archive: C:\Users\a.beker\.m2\repository\org\springframework\boot\spring-boot\2.2.6.RELEASE\spring-boot-2.2.6.RELEASE.jar
+2021-06-12 13:39:36,742 | DEBUG | org.springframework.boot.web.servlet.server.DocumentRoot | [main] | None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
